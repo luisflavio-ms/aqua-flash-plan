@@ -17,6 +17,7 @@ import {
   GraduationCap,
   Timer,
   Gift,
+  Star,
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { CTAButton } from "@/components/landing/CTAButton";
@@ -585,6 +586,49 @@ function PlanoCard({
 }
 
 /* ---------------- DEPOIMENTOS ---------------- */
+const DEPOIMENTOS = [
+  {
+    nome: "Mariana Santos",
+    cargo: "Líder de Células",
+    cidade: "São Paulo, SP",
+    foto: "https://randomuser.me/api/portraits/women/44.jpg",
+    texto:
+      "Esse material transformou completamente minha forma de liderar. Os flashcards são objetivos e fáceis de aplicar na prática. Meu grupo cresceu muito depois que comecei a usar!",
+  },
+  {
+    nome: "Cláudia Ferreira",
+    cargo: "Pastora",
+    cidade: "Belo Horizonte, MG",
+    foto: "https://randomuser.me/api/portraits/women/68.jpg",
+    texto:
+      "Nunca vi um conteúdo tão completo e acessível para líderes. Consegui aplicar as lições já na primeira semana. Recomendo para todo líder que quer crescer!",
+  },
+  {
+    nome: "Fernanda Lima",
+    cargo: "Diácona e Ministra",
+    cidade: "Rio de Janeiro, RJ",
+    foto: "https://randomuser.me/api/portraits/women/22.jpg",
+    texto:
+      "Comprei com um pouco de dúvida, mas me surpreendi demais. O conteúdo é rico, prático e muito bem organizado. Valeu cada centavo investido.",
+  },
+  {
+    nome: "Juliana Oliveira",
+    cargo: "Líder de Jovens",
+    cidade: "Curitiba, PR",
+    foto: "https://randomuser.me/api/portraits/women/57.jpg",
+    texto:
+      "Indicou para toda a equipe da minha igreja! Os estudos são incríveis, muito bem fundamentados. Os bônus então são de outro nível. Sensacional!",
+  },
+  {
+    nome: "Camila Rodrigues",
+    cargo: "Coordenadora de Ministério",
+    cidade: "Salvador, BA",
+    foto: "https://randomuser.me/api/portraits/women/33.jpg",
+    texto:
+      "Finalmente um material que respeita o tempo do líder. Fácil de estudar, fácil de ensinar. Minha equipe ficou muito mais engajada e preparada.",
+  },
+];
+
 function Depoimentos() {
   return (
     <Section>
@@ -592,10 +636,30 @@ function Depoimentos() {
         <h2 className="text-3xl sm:text-4xl font-bold">Líderes aprovam</h2>
         <p className="mt-3 text-muted-foreground">Veja o que estão dizendo.</p>
       </div>
-      <div className="mt-8 grid sm:grid-cols-2 gap-5 max-w-3xl mx-auto">
-        {IMAGES.prints.map((p, i) => (
-          <div key={i} className="rounded-2xl overflow-hidden shadow-soft border border-border/50">
-            <Placeholder label={`print_${i + 1}`} src={p} aspect="aspect-video" />
+      <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
+        {DEPOIMENTOS.map((d, i) => (
+          <div
+            key={i}
+            className="flex flex-col gap-4 rounded-2xl bg-card border border-border/50 shadow-soft p-6"
+          >
+            <div className="flex items-center gap-3">
+              <img
+                src={d.foto}
+                alt={d.nome}
+                className="size-14 rounded-full object-cover border-2 border-primary/30"
+              />
+              <div>
+                <p className="font-semibold leading-tight">{d.nome}</p>
+                <p className="text-xs text-muted-foreground">{d.cargo}</p>
+                <p className="text-xs text-muted-foreground">{d.cidade}</p>
+              </div>
+            </div>
+            <div className="flex gap-0.5">
+              {Array.from({ length: 5 }).map((_, s) => (
+                <Star key={s} className="size-4 fill-yellow-400 text-yellow-400" />
+              ))}
+            </div>
+            <p className="text-sm text-muted-foreground leading-relaxed">"{d.texto}"</p>
           </div>
         ))}
       </div>
