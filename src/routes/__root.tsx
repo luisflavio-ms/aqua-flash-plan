@@ -1,12 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import {
-  Outlet,
-  Link,
-  createRootRouteWithContext,
-  useRouter,
-  HeadContent,
-  Scripts,
-} from "@tanstack/react-router";
+import { Outlet, Link, createRootRouteWithContext, useRouter, HeadContent, Scripts } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
 import heroImg from "../assets/landing/hero.webp";
@@ -41,9 +34,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold tracking-tight text-foreground">
-          This page didn't load
-        </h1>
+        <h1 className="text-xl font-semibold tracking-tight text-foreground">This page didn't load</h1>
         <p className="mt-2 text-sm text-muted-foreground">
           Something went wrong on our end. You can try refreshing or head back home.
         </p>
@@ -75,16 +66,36 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "100 Dinâmicas para Encontro de Casais — Material Pronto para Igrejas" },
-      { name: "description", content: "Organize um encontro de casais inesquecível na sua igreja com 100 dinâmicas prontas, roteiro completo e bônus exclusivos. Acesso imediato e garantia de 7 dias." },
+      {
+        name: "description",
+        content:
+          "Organize um encontro de casais inesquecível na sua igreja com 100 dinâmicas prontas, roteiro completo e bônus exclusivos. Acesso imediato e garantia de 7 dias.",
+      },
       { name: "author", content: "100 Dinâmicas para Encontro de Casais" },
       { property: "og:title", content: "100 Dinâmicas para Encontro de Casais — Material Pronto para Igrejas" },
-      { property: "og:description", content: "Organize um encontro de casais inesquecível na sua igreja com 100 dinâmicas prontas, roteiro completo e bônus exclusivos. Acesso imediato e garantia de 7 dias." },
+      {
+        property: "og:description",
+        content:
+          "Organize um encontro de casais inesquecível na sua igreja com 100 dinâmicas prontas, roteiro completo e bônus exclusivos. Acesso imediato e garantia de 7 dias.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "100 Dinâmicas para Encontro de Casais — Material Pronto para Igrejas" },
-      { name: "twitter:description", content: "Organize um encontro de casais inesquecível na sua igreja com 100 dinâmicas prontas, roteiro completo e bônus exclusivos. Acesso imediato e garantia de 7 dias." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9f423055-655c-42ee-97fe-87a4ab086393/id-preview-102d38e8--86fcf482-3e5e-46e7-99b8-c509c1d25aed.lovable.app-1779754650720.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9f423055-655c-42ee-97fe-87a4ab086393/id-preview-102d38e8--86fcf482-3e5e-46e7-99b8-c509c1d25aed.lovable.app-1779754650720.png" },
+      {
+        name: "twitter:description",
+        content:
+          "Organize um encontro de casais inesquecível na sua igreja com 100 dinâmicas prontas, roteiro completo e bônus exclusivos. Acesso imediato e garantia de 7 dias.",
+      },
+      {
+        property: "og:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9f423055-655c-42ee-97fe-87a4ab086393/id-preview-102d38e8--86fcf482-3e5e-46e7-99b8-c509c1d25aed.lovable.app-1779754650720.png",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9f423055-655c-42ee-97fe-87a4ab086393/id-preview-102d38e8--86fcf482-3e5e-46e7-99b8-c509c1d25aed.lovable.app-1779754650720.png",
+      },
     ],
     links: [
       { rel: "dns-prefetch", href: "https://cdn.utmify.com.br" },
@@ -121,7 +132,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
         <HeadContent />
         <script
           dangerouslySetInnerHTML={{
-            __html: `window.pixelId = "69c6937e3cabb357fdc65eb5";
+            __html: `window.pixelId = "6a1e045d0761c3126c54c3fb";
 var a = document.createElement("script");
 a.setAttribute("async", "");
 a.setAttribute("defer", "");
